@@ -1,5 +1,5 @@
-# FROM graalvm-community-21.0.2_1.10.2_2.13.15
-FROM sbtscala/scala-sbt:graalvm-community-21.0.2_1.10.2_2.13.15
+# FROM sbtscala/scala-sbt:graalvm-community-21.0.2_1.10.2_2.13.15
+FROM sbtscala/scala-sbt:eclipse-temurin-alpine-21.0.2_13_1.10.2_2.13.15
 
 COPY . /app
 WORKDIR /app

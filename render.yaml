@@ -1,0 +1,24 @@
+services:
+  - type: web
+    plan: free
+    name: prout
+    runtime: docker
+    region: frankfurt
+    envVars:
+      # sbt/play/pekko always seems to be running on port 9000
+      - key: PORT
+        value: 9000
+      # A GitHub access token - the bot will run with this account.
+      # Required scope: repo. If you want Travis integration, then also add:
+      # read:org, user:email, repo_deployment, repo:status & write:repo_hook
+      # - key: "PROUT_GITHUB_ACCESS_TOKEN"
+      # Random text to use as a crypto seed for signing session cookies.
+      # See https://www.playframework.com/documentation/2.4.x/ApplicationSecret
+      - key: "APPLICATION_SECRET"
+        generateValue: true
+      # Prout has some admin-only screens to help diagnose problems with setup.
+      # If you want to use them, you'll need to add Prout as a Developer
+      # application in your GitHub settings: https://github.com/settings/developers
+      # - key: "GITHUB_APP_CLIENT_ID" # optional, for the debug screens
+      # The Client Secret credentials for GitHub OAuth V2.
+      # - key: "GITHUB_APP_CLIENT_SECRET"

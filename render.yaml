@@ -1,6 +1,6 @@
 services:
   - type: web
-    plan: free
+    plan: starter
     name: prout
     runtime: docker
     region: frankfurt
